@@ -30,7 +30,7 @@ export default function Movie(props) {
                     <Card.Text>
                         {props.movie.release_date} 
                     </Card.Text>
-                    <Button variant="danger" onClick={()=>{handleShow(props.movie)}}>Show Model</Button>
+                    <Button variant="danger" onClick={()=>{handleShow(props.movie)}}>Add To Favorite </Button>
                     
                 </Card.Body>
             </Card>

@@ -1,40 +1,42 @@
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { useState } from "react";
-// import ModalRecipe from "./Modal"
+import ModalMovie from "../ModalMovie/ModalMovie"
 
 // import {Card , Button} from 'react-bootstrap'
 
 
 
 export default function Movie(props) {
-    // const [show, setShow] = useState(false);
-    // const [chosenRecipe, setChosenRecipes] = useState();
+    const [show, setShow] = useState(false);
+    const [chosenMovie, setChosenMovies] = useState();
 
-    // const handleClose = () => setShow(false);
-    // const handleShow = (recipe) => {
-    //     setChosenRecipes(recipe);
-    //     setShow(true);
+    const handleClose = () => setShow(false);
+    const handleShow = (movie) => {
+        setChosenMovies(movie);
+        setShow(true);
     console.log(props);
 
-    
+       }
     return (
         <>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={props.recipe.image} />
+                <Card.Img variant="top" src={props.movie.poster_path} />
                 <Card.Body>
-                    <Card.Title>{props.recipe.title}</Card.Title>
+                    <Card.Title>{props.movie.title}</Card.Title>
                     <Card.Text>
-                        {props.recipe.overview}
+                        {props.movie.overview}
                     </Card.Text>
                     <Card.Text>
-                        {props.recipe.release_date} 
+                        {props.movie.release_date} 
                     </Card.Text>
-                  
+                    <Button variant="danger" onClick={()=>{handleShow(props.movie)}}>Show Model</Button>
                     
                 </Card.Body>
             </Card>
-           
+            {
+                chosenMovie && <ModalMovie show={show} handleClose={handleClose} chosenMovie={chosenMovie} />
+            }
           
         </>
     )

@@ -5,10 +5,10 @@ export default function MovieList(props) {
     return (
         <>
             {
-                props.recipes.map((recipe) => {
+                props.movies.map((movie) => {
                     return (
                         <>
-                            <Movie recipe={recipe} />
+                            <Movie movie={movie} />
                         </>
                     )
                 }

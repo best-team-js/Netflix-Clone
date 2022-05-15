@@ -12,7 +12,8 @@ export default function MovieList(props) {
                 props.movies.map((movie) => {
                     return (
                         <>
-                            <Movie movie={movie} />
+                            <Movie key={movie.id} movie={movie} updatedMovie={props.updateMovie}/>
+                           
                         </>
                     )
                 }

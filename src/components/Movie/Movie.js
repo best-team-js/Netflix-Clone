@@ -34,8 +34,8 @@ export default function Movie(props) {
                 </Card.Body>
             </Card>
             {
-                chosenMovie && <ModalMovie show={show} handleClose={handleClose} chosenMovie={chosenMovie} />
-                //chosenRecipe && <ModalRecipe show={show} handleClose={handleClose} chosenRecipe={chosenRecipe} updateRecipe={props.updateRecipe}/>
+             chosenMovie && <ModalMovie show={show} handleClose={handleClose} chosenMovie={chosenMovie} updateMovie={props.updateMovie} />
+                
             }
           
         </>

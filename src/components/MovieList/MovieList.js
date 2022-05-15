@@ -1,5 +1,5 @@
 import './MovieList.css';
-import { Button, Row, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Movie from '../Movie/Movie'
 
 export default function MovieList(props) {

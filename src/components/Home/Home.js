@@ -27,7 +27,8 @@ export default function Home() {
 
     return (
         <>
-             <Button variant="danger">Get Movies</Button>
+             <h1 align="center">Welcome to Movies Web Application</h1>
+             <br/>
             {
                 (movies.length > 0) && <MovieList movies={movies} />
             }

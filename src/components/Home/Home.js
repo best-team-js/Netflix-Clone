@@ -18,6 +18,19 @@ export default function Home() {
         setMovies(moviesData);
         console.log("1, After updating", movies);
     }
+    function updateMovie(newMovie, id) {
+        let updatedMovies = movies.map((movie) => {
+            if (movie.id === id) {
+                movie.comment = newMovie.userComment;
+                return movie;
+            } else {
+                return movie;
+            }
+        })
+
+        setMovies(updatedMovies );
+
+    }
 
     useEffect(() => {
         getMovies();
@@ -30,7 +43,7 @@ export default function Home() {
              <h1 align="center">Welcome to Movies Web Application</h1>
              <br/>
             {
-                (movies.length > 0) && <MovieList movies={movies} />
+                (movies.length > 0) && <MovieList movies={movies} updateMovie={updateMovie}/>
             }
           
 

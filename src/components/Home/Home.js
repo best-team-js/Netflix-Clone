@@ -6,6 +6,7 @@ import MovieList from '../MovieList/MovieList';
 
 export default function Home() {
     const [movies, setMovies] = useState([]);
+
     async function getMovies() {
         //let serverUrl = process.env.REACT_KEY_SERVER;
         // let response = await fetch(serverUrl);
@@ -22,12 +23,15 @@ export default function Home() {
         getMovies();
     }, [])
 
+  
+
     return (
         <>
              <Button variant="danger">Get Movies</Button>
             {
                 (movies.length > 0) && <MovieList movies={movies} />
             }
+          
 
 
         </>

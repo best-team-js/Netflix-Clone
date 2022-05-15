@@ -15,8 +15,7 @@ export default function Movie(props) {
     const handleShow = (movie) => {
         setChosenMovies(movie);
         setShow(true);
-    console.log(props);
-
+       //console.log(props);
        }
     return (
         <>

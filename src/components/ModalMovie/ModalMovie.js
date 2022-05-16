@@ -23,7 +23,7 @@ export default function ModalMovie(props) {
         title: movie.title,
         release_date: movie.release_date,
         overview: movie.overview,
-        image: movie.image,
+        poster_path: movie.poster_path,
         comment: movie.comment,
 
     }
@@ -36,8 +36,8 @@ export default function ModalMovie(props) {
         body: JSON.stringify(data),
     })
 
-    let addedRecipe = await response.json();
-    console.log("addedRecipe", addedRecipe);
+    let addedMovie = await response.json();
+    console.log("addedMovie", addedMovie);
 }
 
     return (

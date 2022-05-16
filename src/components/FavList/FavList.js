@@ -28,7 +28,7 @@
     
             if (response.status == 204) {
                 getFavMovies();
-                alert("Recipe deleted successfully");
+                alert("movies deleted successfully");
             }
     
         }

@@ -8,7 +8,7 @@ export default function Home() {
     const [movies, setMovies] = useState([]);
 
     async function getMovies() {
-        //let serverUrl = process.env.REACT_KEY_SERVER;
+        //let serverUrl = process.env.REACT_APP_SERVER;
         // let response = await fetch(serverUrl);
 
         let url = 'https://movies-recipe.herokuapp.com';

@@ -6,21 +6,25 @@
         const [favMovies, setFavMovies] = useState();
     
         async function getFavMovies() {
-            let url = `${process.env.REACT_APP_SERVER}/favRecipes`
-            let response = await fetch(url, {
+            let url = 'https://movies-recipe.herokuapp.com';
+            
+            // let url = `${process.env.REACT_APP_SERVER}/favRecipes`
+            let response = await fetch(`${url}/favRecipes`, {
                 method: 'GET'
             });
     
             let recivedData = await response.json();
-            getFavMovies(recivedData)
+            setFavMovies(recivedData);
         }
     
         async function handleDelete(id) {
-            let url = `${process.env.REACT_APP_SERVER}/delete/${id}`;
-            let response = await fetch(url, {
+            let url = 'https://movies-recipe.herokuapp.com';
+            
+            let response = await fetch(`${url}/delete/${id}`, {
                 method: 'DELETE',
             })
-            // let deletedRecipe = await response.json();
+            //  let deletedRecipe = await response.json();
+            
     
             if (response.status == 204) {
                 getFavMovies();

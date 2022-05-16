@@ -8,8 +8,8 @@
         async function getFavMovies() {
             let url = 'https://movies-recipe.herokuapp.com';
             
-            // let url = `${process.env.REACT_APP_SERVER}/favRecipes`
-            let response = await fetch(`${url}/favRecipes`, {
+  
+            let response = await fetch(`${url}/getMovies`, {
                 method: 'GET'
             });
     
@@ -23,7 +23,7 @@
             let response = await fetch(`${url}/delete/${id}`, {
                 method: 'DELETE',
             })
-            //  let deletedRecipe = await response.json();
+            
             
     
             if (response.status == 204) {

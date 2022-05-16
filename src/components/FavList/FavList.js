@@ -44,7 +44,7 @@
                     favMovies && favMovies.map((favMovies) => {
                         return (
                             <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500${favMovies.poster_path}`} />
+                                <Card.Img variant="top" src={favMovies.poster_path} />
                                
                                 <Card.Body>
                                     <Card.Title>{favMovies.title}</Card.Title>

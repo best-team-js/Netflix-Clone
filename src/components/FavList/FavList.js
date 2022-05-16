@@ -6,10 +6,10 @@
         const [favMovies, setFavMovies] = useState();
     
         async function getFavMovies() {
-            let url = 'https://movies-recipe.herokuapp.com';
-            
-            // let url = `${process.env.REACT_APP_SERVER}/favRecipes`
-            let response = await fetch(`${url}/getMovies`, {
+            // let url = 'https://movies-recipe.herokuapp.com';
+            //`${url}/getMovies`
+         let url = `${process.env.REACT_APP_SERVER}/getMovies`
+            let response = await fetch(url, {
                 method: 'GET'
             });
     
@@ -28,7 +28,7 @@
     
             if (response.status == 204) {
                 getFavMovies();
-                alert("Recipe deleted successfully");
+                alert("movies deleted successfully");
             }
     
         }
@@ -44,7 +44,7 @@
                     favMovies && favMovies.map((favMovies) => {
                         return (
                             <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={favMovies.poster_path} />
+                                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500${favMovies.poster_path}`} />
                                
                                 <Card.Body>
                                     <Card.Title>{favMovies.title}</Card.Title>

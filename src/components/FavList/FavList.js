@@ -6,7 +6,7 @@
         const [favMovies, setFavMovies] = useState();
     
         async function getFavMovies() {
-            // let url = 'https://movies-recipe.herokuapp.com';
+ // let url = 'https://movies-recipe.herokuapp.com';
            
             // `${url}/getMovies`
         let url = `${process.env.REACT_APP_SERVER}/getMovies`
@@ -25,8 +25,7 @@
             let response = await fetch(`${url}/delete/${id}`, {
                 method: 'DELETE',
             })
-           
-             // let deletedMovie = await response.json(
+
     
             if (response.status == 204) {
                 getFavMovies();

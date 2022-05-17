@@ -48,7 +48,7 @@ export default function ModalMovie(props) {
                     <Modal.Title>{props.chosenMovie.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <img src={`https://image.tmdb.org/t/p/w500${props.chosenMovie.poster_path}`} alt="movie image" />
+                    <img src={`https://image.tmdb.org/t/p/w500${props.chosenMovie.poster_path}`} alt="movie image" style={{ width: "100%" }}/>
                    
                     {props.chosenMovie.overview.substring(0, 200)}
                     <br />

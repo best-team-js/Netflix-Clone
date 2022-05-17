@@ -1,5 +1,3 @@
-
-import { Button } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import MovieList from '../MovieList/MovieList';
 

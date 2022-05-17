@@ -11,7 +11,7 @@ export default function NavBar() {
                     <Navbar.Brand href="#home">Netflix</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/favorite">Fav Movies</Nav.Link>
+                        <Nav.Link href="/getMovies">Fav Movies</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

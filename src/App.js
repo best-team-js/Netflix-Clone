@@ -8,7 +8,7 @@ function App() {
     <NavBar/>
     <Routes>
     <Route path="/" element={<Home/>} />
-    <Route path="/favorite" element={<FavList/>} />
+    <Route path="/getMovies" element={<FavList/>} />
     
   </Routes>
     </>

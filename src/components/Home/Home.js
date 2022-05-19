@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import MovieList from '../MovieList/MovieList';
 
@@ -9,13 +10,20 @@ export default function Home() {
         //let serverUrl = process.env.REACT_APP_SERVER;
         // let response = await fetch(serverUrl);
 
-        let url = 'https://movies-recipe.herokuapp.com';
-        let response = await fetch(`${url}/trending`);
+         let url = 'https://movies-recipe.herokuapp.com/trending';
+        let response = await fetch(url);
         console.log("response", response);
         let moviesData = await response.json();
         setMovies(moviesData);
         console.log("1, After updating", movies);
     }
+//    async  function getMovies(){
+
+//       let response= await axios.get(`${process.env.REACT_APP_SERVER}/trending`);
+//       let moviesData = await response.data;
+//       setMovies(moviesData);
+//    } 
+   
     function updateMovie(newMovie, id) {
         let updatedMovies = movies.map((movie) => {
             if (movie.id === id) {

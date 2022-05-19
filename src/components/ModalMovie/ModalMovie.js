@@ -18,7 +18,8 @@ export default function ModalMovie(props) {
     async function handleAddFav(e,movie) {
     e.preventDefault();
     console.log("movie", movie);
-    let url = `${process.env.REACT_APP_SERVER}/addMovie`;
+    let url = 'https://movies-recipe.herokuapp.com/addMovie';
+    
     let data = {
         title: movie.title,
         release_date: movie.release_date,
@@ -35,6 +36,7 @@ export default function ModalMovie(props) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data),
+        mode: 'cors',
     })
 
     let addedMovie = await response.json();
@@ -48,13 +50,11 @@ export default function ModalMovie(props) {
                     <Modal.Title>{props.chosenMovie.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <img src={`https://image.tmdb.org/t/p/w500${props.chosenMovie.poster_path}`} alt="movie image" style={{ width: "100%" }}/>
+                    <img src={`https://image.tmdb.org/t/p/w400/${props.chosenMovie.poster_path}`} alt="movie image" style={{ width: "100%" }}/>
                    
                     {props.chosenMovie.overview.substring(0, 200)}
                     <br />
                     {props.chosenMovie.comment ? props.chosenMovie.comment : "No comment is added"}
-                    <Form></Form>
-
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Comment</Form.Label>
@@ -63,6 +63,9 @@ export default function ModalMovie(props) {
                                 Add your comment about film
                             </Form.Text>
                         </Form.Group>
+                        </Form>
+                        </Modal.Body>
+                        <Modal.Footer>
                         <p align="center">
                         <Button variant="danger" type="submit" onClick={(e) => handleComment(e)}>
                             Submit Comment
@@ -71,9 +74,9 @@ export default function ModalMovie(props) {
                             Add to favorites
                         </Button>
                         </p>
-                    </Form>
-                </Modal.Body>
-                <Modal.Footer>
+                    
+              
+                
                    
                 </Modal.Footer>
             </Modal>
